@@ -1,0 +1,53 @@
+<html>
+<head>
+  <title>BeatBox</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+  <link rel="icon" href="assets/img/drumkit.png">
+  <script type="text/javascript">
+    document.addEventListener('keydown',function(event){
+      console.log("Key:"+event.keyCode);
+      var audioId=document.getElementById(''+event.keyCode);
+      var keypressed=document.getElementById('k'+event.keyCode).classList;
+      keypressed.add('play');
+      audioId.currentTime=0;
+      audioId.play();
+      setTimeout(function () {
+        keypressed.remove('play');
+      }, 150);
+
+    })
+  </script>
+</head>
+<body>
+  <div class="container">
+    <h1>Beat Box<h1>
+    <img src="assets/img/drumkit2.png"/>
+  </div>
+    <div class="keys">
+    <div class="key" id="k65">A <span class="beats">clap</span></div>
+    <div class="key" id="k83">S <span class="beats">hihat</span></div>
+    <div class="key" id="k68">D <span class="beats">kick</span></div>
+    <div class="key" id="k70">F <span class="beats">openhat</span></div>
+    <div class="key" id="k71">G <span class="beats">boom</span></div>
+    <div class="key" id="k72">H <span class="beats">ride</span></div>
+    <div class="key" id="k74">J <span class="beats">snare</span></div>
+    <div class="key" id="k75">K <span class="beats">tom</span></div>
+    <div class="key" id="k76">L <span class="beats">tink</span></div>
+    </div>
+
+    <audio id="65"><source src="assets/sounds/clap.wav"/> </audio>
+    <audio id="83"><source src="assets/sounds/hihat.wav"/> </audio>
+    <audio id="68"><source src="assets/sounds/kick.wav"/> </audio>
+    <audio id="70"><source src="assets/sounds/openhat.wav"/> </audio>
+    <audio id="71"><source src="assets/sounds/boom.wav"/> </audio>
+    <audio id="72"><source src="assets/sounds/ride.wav"/> </audio>
+    <audio id="74"><source src="assets/sounds/snare.wav"/> </audio>
+    <audio id="75"><source src="assets/sounds/tink.wav"/> </audio>
+    <audio id="76"><source src="assets/sounds/tom.wav"/> </audio>
+
+    <footer>
+      2017© Coded by Jay Jariwala.
+    </footer>
+</body>
+</html>
