@@ -6,9 +6,13 @@
   <link rel="icon" href="assets/img/drumkit.png">
   <script type="text/javascript">
     document.addEventListener('keydown',function(event){
-      console.log("Key:"+event.keyCode);
       var audioId=document.getElementById(''+event.keyCode);
+      if(audioId == null)
+      {
+        return;
+      }
       var keypressed=document.getElementById('k'+event.keyCode).classList;
+
       keypressed.add('play');
       audioId.currentTime=0;
       audioId.play();
